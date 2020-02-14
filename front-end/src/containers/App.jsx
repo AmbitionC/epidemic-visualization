@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Layout } from 'antd';
+import Nav from './Nav';
 
 import 'css/normalize.css';
 import 'css/main.css';
@@ -12,7 +13,9 @@ export default () => {
     <Layout>
       <Header>疫情数据可视化平台</Header>
       <Layout className='main-wrapper'>
-        <Sider>Sider</Sider>
+        <Sider>
+          <Nav />
+        </Sider>
         <Content>Content</Content>
       </Layout>
     </Layout>

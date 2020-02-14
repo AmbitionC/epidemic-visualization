@@ -1,15 +1,33 @@
 @import '~antd/dist/antd.css';
 
+#root,
+#root>section {
+  width: 100%;
+  height: 100%;
+}
+
+/* 基本的页面布局 */
 .ant-layout-header {
   background-color: #ffffff;
   box-shadow: 0 2px 8px #f0f1f2;
+  margin-bottom: 16px;
 }
 .ant-layout {
   background: none;
 }
-.main-wrapper {
-  margin: 16px 0;
-}
 .main-wrapper>aside {
-  border-right: 1px rgba(0, 0, 0, 0.16) solid;
+  background: none;
+}
+.ant-layout-sider-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ant-layout-sider-children>ul {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.main-wrapper main {
+  padding: 0 16px 16px;
 }
