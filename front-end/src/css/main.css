@@ -28,6 +28,11 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
+.ant-layout-sider-children>button {
+  border-color: #e8e8e8;
+  border-radius: 0;
+  background: #e8e8e8;
+}
 .main-wrapper main {
-  padding: 0 16px 16px;
+  padding: 16px;
 }
