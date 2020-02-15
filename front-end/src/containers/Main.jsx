@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
 
 import { Layout, Menu, Icon, Button } from 'antd';
-import DonateForm from '../form/DonateForm'
-import NeedForm from '../form/NeedForm'
+import DonateForm from '../form/DonateForm';
+import NeedForm from '../form/NeedForm';
+import AddressUi from '../map/map'
 const { Sider, Content } = Layout;
 
 // 这两个组件仅作为测试用
@@ -31,6 +32,11 @@ const menu = [
     icon: 'team',
     name: '获取需求',
     component: <NeedForm />,
+  },
+  {
+    icon: 'environment',
+    name: '武汉疫情地图',
+    component: <AddressUi />,
   },
 ];
 
