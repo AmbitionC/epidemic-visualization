@@ -1,0 +1,13 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: ev-service-api
+  data:
+    mongodb:
+      uri:  mongodb://root:123456@localhost:27017
+      database: epidemic
+  freemarker:
+    cache: false  #关闭模板缓存，方便测试
+    settings:
+      template_update_delay: 0
