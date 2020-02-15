@@ -34,5 +34,15 @@
   background: #e8e8e8;
 }
 .main-wrapper main {
-  padding: 16px;
+  padding: 0 16px 16px;
+}
+
+/* 地图 */
+#map {
+  position: relative;
+  width: 640px;
+  height: 640px;
+}
+#map .amap-logo>img{
+  display: none;
 }
