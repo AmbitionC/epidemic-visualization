@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Scene } from '@antv/l7';
 import { GaodeMap } from '@antv/l7-maps';
-import {addHospital} from './pointLayer';
+import { addHospital } from './pointLayer';
 
 const WU_HAN_POSITION = [114.3046920000, 30.5933100000];
 
@@ -16,8 +16,7 @@ export default () => {
         center: WU_HAN_POSITION,
         style: 'light',
         zoom: 11,
-        minZoom: 4,
-        maxZoom: 14,
+        minZoom: 9,
         token: 'eb0521cf7e382ff3fe92b010365cd795',
       }),
     };
