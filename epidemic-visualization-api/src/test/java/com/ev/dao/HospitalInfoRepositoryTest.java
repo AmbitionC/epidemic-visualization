@@ -1,7 +1,7 @@
 package com.ev.dao;
 
 
-import com.ev.domain.HospitalInfo;
+import com.ev.domain.HospitalInfoDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class HospitalInfoRepositoryTest {
 
     @Test
     public void testFindAll(){
-        List<HospitalInfo> all = hospitalInfoRepository.findAll();
+        List<HospitalInfoDAO> all = hospitalInfoRepository.findAll();
         System.out.println(all);
 
     }
@@ -35,7 +35,7 @@ public class HospitalInfoRepositoryTest {
         int page = 1;//从0开始
         int size = 10;
         Pageable pageable = PageRequest.of(page,size);
-        Page<HospitalInfo> all = hospitalInfoRepository.findAll(pageable);
+        Page<HospitalInfoDAO> all = hospitalInfoRepository.findAll(pageable);
         System.out.println(all);
     }
 
@@ -44,14 +44,14 @@ public class HospitalInfoRepositoryTest {
     @Test
     public void testUpdate() {
         //查询对象
-        Optional<HospitalInfo> optional = hospitalInfoRepository.findById("5b4b1d8bf73c6623b03f8cec");
+        Optional<HospitalInfoDAO> optional = hospitalInfoRepository.findById("5b4b1d8bf73c6623b03f8cec");
         if(optional.isPresent()){
-            HospitalInfo hospitalInfo = optional.get();
+            HospitalInfoDAO hospitalInfo = optional.get();
             //设置要修改值
             hospitalInfo.setAddress("test01");
             //...
             //修改
-            HospitalInfo save = hospitalInfoRepository.save(hospitalInfo);
+            HospitalInfoDAO save = hospitalInfoRepository.save(hospitalInfo);
             System.out.println(save);
         }
 
