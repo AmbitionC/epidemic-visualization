@@ -4,23 +4,25 @@ import { Layout, Menu, Icon, Button } from 'antd';
 import DonateForm from 'components/form/DonateForm';
 import NeedForm from 'components/form/NeedForm';
 import Map from 'components/map/Map';
+import { variableMap } from '../global/variable';
+
 const { Sider, Content } = Layout;
 
 // 导航菜单的内容，主要包括：图标、名称、点击之后对应的主区域的组件
 const menu = [
   {
     icon: 'environment',
-    name: '武汉疫情地图',
+    name: variableMap.menuMap,
     component: <Map />,
   },
   {
     icon: 'team',
-    name: '提供捐赠',
+    name: variableMap.menuDonate,
     component: <DonateForm />,
   },
   {
     icon: 'team',
-    name: '获取需求',
+    name: variableMap.menuNeed,
     component: <NeedForm />,
   },
 ];

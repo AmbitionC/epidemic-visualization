@@ -1,13 +1,15 @@
 import { PointLayer } from '@antv/l7';
 
+import { urlMap } from '../../global/url';
+
 export const addHospital = scene => {
   scene.addImage(
     'local',
-    'https://gw.alipayobjects.com/zos/rmsportal/xZXhTxbglnuTmZEwqQrE.png',
+    urlMap.mapIcon,
   );
 
   fetch(
-    'https://gw.alipayobjects.com/os/basement_prod/893d1d5f-11d9-45f3-8322-ee9140d288ae.json'
+    urlMap.mock
   )
     .then(res => res.json())
     .then(data => {
