@@ -8,7 +8,7 @@
 
 /* 基本的页面布局 */
 .ant-layout-header {
-  background-color: #ffffff;
+  background-color: #C1CDCD;
   box-shadow: 0 2px 8px #f0f1f2;
 }
 .main-wrapper {
@@ -27,4 +27,14 @@
 }
 #map .amap-logo>img{
   display: none;
+}
+div .logo-wrapper{
+  display: inline;
+  margin-left: 46%;
+}
+div .name-wrapper{
+  display: inline;
+}
+div .uestc-wrapper{
+  float: left;
 }

@@ -1,12 +1,13 @@
 import { PointLayer } from '@antv/l7';
-import { requestHospitalInfo } from 'util/request';
+
+import { urlMap, requestHospital } from 'global/url';
 
 export const addHospital = scene => {
   scene.addImage(
     'marker',
-    'https://gw.alipayobjects.com/mdn/antv_site/afts/img/A*BJ6cTpDcuLcAAAAAAAAAAABkARQnAQ',
+    urlMap.mapIcon
   );
-  requestHospitalInfo().then(data => {
+  requestHospital().then(data => {
     const pointLayer = new PointLayer()
       .source(data, {
         parser: {

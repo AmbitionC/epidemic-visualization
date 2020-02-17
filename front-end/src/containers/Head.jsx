@@ -1,7 +1,8 @@
 import React from 'react';
+import { variableMap } from 'global/variable'
 
 export default () => {
   return (
-    <div>疫情数据可视化平台</div>
+    <div>{variableMap.header}</div>
   );
 }
