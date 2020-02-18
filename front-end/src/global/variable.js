@@ -4,5 +4,7 @@ export const variableMap = {
   menuMap: '武汉疫情地图',
   menuDonate: '提供捐赠',
   menuNeed: '获取需求',
+  homePage: '首页',
+  test: '测试',
   
 };
