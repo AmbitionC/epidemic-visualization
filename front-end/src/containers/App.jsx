@@ -11,11 +11,11 @@ import 'css/normalize.css';
 import 'css/main.css';
 
 export const T1 = () => <div style={{ width: '100%', height: '100%', background: '#dddddd' }}>组件区域</div>
-export const T2= () => <div style={{ width: '100%', height: '100%', background: '#d1d1d1' }}>组件区域2</div>
+export const T2 = () => <div style={{ width: '100%', height: '100%', background: '#d1d1d1' }}>组件区域2</div>
 
 const { Header } = Layout;
 
-export default () => {
+export const APP = ()=> {
   return (
     <Router>
       <Layout>
