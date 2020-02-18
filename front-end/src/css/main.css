@@ -16,7 +16,8 @@
   flex-direction: row;
 }
 .main-wrapper>.col {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  width: 50%;
 }
 
 /* 地图 */
@@ -27,14 +28,4 @@
 }
 #map .amap-logo>img{
   display: none;
-}
-div .logo-wrapper{
-  display: inline;
-  margin-left: 46%;
-}
-div .name-wrapper{
-  display: inline;
-}
-div .uestc-wrapper{
-  float: left;
 }
