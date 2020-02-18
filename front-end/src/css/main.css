@@ -19,6 +19,9 @@
   /* flex-grow: 1; */
   width: 50%;
 }
+.main-wrapper>.home-page {
+  flex-grow: 1;
+}
 
 /* 地图 */
 #map {
