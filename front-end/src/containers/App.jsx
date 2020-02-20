@@ -6,6 +6,7 @@ import Head from './Head';
 import Map from 'components/map/Map';
 import DonateForm from 'components/form/DonateForm';
 import NeedForm from 'components/form/NeedForm';
+import CardShow from '../components/card/CardShow';
 
 import 'css/normalize.css';
 import 'css/main.css';
@@ -33,7 +34,7 @@ export const APP = ()=> {
                 <Map />
               </div>
               <div className="row" style={{ height: '33.33%' }}>
-                <T2/>
+                <CardShow />
               </div>
             </div>
           </Route>
