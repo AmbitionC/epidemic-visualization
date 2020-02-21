@@ -1,22 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { Layout, Button } from 'antd';
+import { Layout } from 'antd';
 import Head from './Head';
 import Map from 'components/map/Map';
-import DonateForm from 'components/form/DonateForm';
-import NeedForm from 'components/form/NeedForm';
 import CardShow from '../components/card/CardShow';
 
 import 'css/normalize.css';
 import 'css/main.css';
 
-export const T1 = () => <div style={{ width: '100%', height: '100%', background: '#dddddd' }}>组件区域</div>
+export const T1 = () => <div style={{ width: '100%', height: '100%', background: '#dddddd' }}>组件区域1</div>
 export const T2 = () => <div style={{ width: '100%', height: '100%', background: '#d1d1d1' }}>组件区域2</div>
+export const T3 = () => <div style={{ width: '100%', height: '100%', background: '#d1d1d1' }}>组件区域3</div>
 
 const { Header } = Layout;
 
-export const APP = ()=> {
+export const App = () => {
   return (
     <Router>
       <Layout>
@@ -26,8 +25,9 @@ export const APP = ()=> {
         <Layout className='main-wrapper'>
           <Route path="/platform/">
             <div className="col">
-              <Route path="/platform/donateform" component={DonateForm}/>
-              <Route path="/platform/needform" component={NeedForm}/>
+              <Route path="/platform/test1" component={T1}/>
+              <Route path="/platform/test2" component={T2}/>
+              <Route path="/platform/test3" component={T3}/>
             </div>
             <div className="col" >
               <div className="row" style={{ height: '66.67%' }}>

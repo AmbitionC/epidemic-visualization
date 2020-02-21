@@ -3,6 +3,8 @@ import { variableMap } from 'global/variable'
 import { Menu, Icon } from 'antd';
 import { Link} from 'react-router-dom';
 import Search from '../components/search/Search';
+import DonateFormDrawer from '../components/formdrawer/DonateFormDrawer';
+import NeedFormDrawer from '../components/formdrawer/NeedFormDrawer';
 
 const menuItem = [
   {
@@ -12,23 +14,23 @@ const menuItem = [
     routeurl: '/'
   },
   {
-    icon: 'usergroup-add',
-    key: 'donate',
-    name: variableMap.menuDonate,
-    routeurl: '/platform/donateform/'
+    icon: 'link',
+    key: 'test1',
+    name: variableMap.test,
+    routeurl: '/platform/test1/'
     
   },
   {
-    icon: 'usergroup-delete',
-    key: 'need',
-    name: variableMap.menuNeed,
-    routeurl: '/platform/needform/'
+    icon: 'link',
+    key: 'test2',
+    name: variableMap.test,
+    routeurl: '/platform/test2/'
   },
   {
     icon: 'link',
-    key: 'test',
+    key: 'test3',
     name: variableMap.test,
-    routeurl: '/platform/test/'
+    routeurl: '/platform/test3/'
   }
 ];
 
@@ -50,6 +52,8 @@ export default () => {
           })}
         </Menu>
       </div>
+      <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><DonateFormDrawer /></div>
+      <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><NeedFormDrawer /></div>
       <div style={{float:'right',marginRight:'20px'}}><Search /></div>
     </Fragment>
   );
