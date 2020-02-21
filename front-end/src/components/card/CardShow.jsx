@@ -75,7 +75,7 @@ export default () => {
           return (
             <Col span={8}>
               <Card
-                headStyle={{fontSize:20, fontFamily:"Times New Roman"}}
+                headStyle={{fontSize:17, fontFamily:"Times New Roman"}}
                 title={item.titleHospital}
                 actions={[
                   <div>查看地图<Icon type="search" /></div>,
