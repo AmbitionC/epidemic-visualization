@@ -115,12 +115,12 @@ class NeedForm extends Component {
                 message: '请输入您的名称',
               },
             ],
-          })(<Input />)}
+          })(<Input style={{width:'270px'}}/>)}
         </Form.Item>
         <Form.Item label="您的联系方式">
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: '请输入您的联系方式!' }],
-          })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
+          })(<Input addonBefore={prefixSelector} style={{width:'270px'}} />)}
         </Form.Item>
         <Form.Item label="邮箱">
         {getFieldDecorator('email', {
@@ -134,7 +134,7 @@ class NeedForm extends Component {
               message: '请输入您的邮箱!',
             },
           ],
-        })(<Input />)}
+        })(<Input style={{width:'270px'}}/>)}
       </Form.Item>
         <Form.Item label="您需求的物资名称" >
           {getFieldDecorator('donate-item', {
@@ -144,7 +144,7 @@ class NeedForm extends Component {
                 message: '请填写您需求的物品名称！',
               },
             ],
-          })(<Input />)}
+          })(<Input style={{width:'270px'}}/>)}
         </Form.Item>
         <Form.Item label="您所需物资的数量或重量" >
           {getFieldDecorator('donate-number', {
@@ -154,7 +154,7 @@ class NeedForm extends Component {
                 message: '请填写您所需物资的数量或重量！',
               },
             ],
-          })(<Input />)}
+          })(<Input style={{width:'270px'}}/>)}
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">

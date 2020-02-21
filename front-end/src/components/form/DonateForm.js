@@ -116,12 +116,12 @@ class DonateForm extends Component {
                 message: '请输入您的名称',
               },
             ],
-          })(<Input />)}
+          })(<Input style={{width:'270px'}}/>)}
         </Form.Item>
         <Form.Item label="您的联系方式">
           {getFieldDecorator('phone', {
             rules: [{ required: true, message: '请输入您的联系方式!' }],
-          })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
+          })(<Input addonBefore={prefixSelector} style={{width:'270px'}} />)}
         </Form.Item>
         <Form.Item label="邮箱">
         {getFieldDecorator('email', {
@@ -135,7 +135,7 @@ class DonateForm extends Component {
               message: '请输入您的邮箱!',
             },
           ],
-        })(<Input />)}
+        })(<Input style={{width:'270px'}}/>)}
       </Form.Item>
         <Form.Item label="您要捐赠的物资名称" >
           {getFieldDecorator('donate-item', {
@@ -145,7 +145,7 @@ class DonateForm extends Component {
                 message: '请填写您将要捐赠的物品名称！',
               },
             ],
-          })(<Input />)}
+          })(<Input style={{width:'270px'}}/>)}
         </Form.Item>
         <Form.Item label="您要捐赠的物资数量或重量" >
           {getFieldDecorator('donate-number', {
@@ -155,7 +155,7 @@ class DonateForm extends Component {
                 message: '请填写您将要捐赠的物品数量或重量！',
               },
             ],
-          })(<Input />)}
+          })(<Input style={{width:'270px'}}/>)}
         </Form.Item>
         <Form.Item label="您想要捐赠哪所医院">
           {getFieldDecorator('hospital', {
@@ -164,7 +164,7 @@ class DonateForm extends Component {
                 required: false,
                 message: '请输入您想捐赠的医院名字!' },
             ],
-          })(<Input />) }
+          })(<Input style={{width:'270px'}}/>) }
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
           <Button>

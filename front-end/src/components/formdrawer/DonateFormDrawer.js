@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
-import DonateForm from 'components/form/DonateForm';
+import React from 'react';
+import { Drawer, Form, Button, Icon } from 'antd';
+import DonateForm from '../form/DonateForm';
+import { variableMap } from 'global/variable'
 
-const { Option } = Select;
 
-class DrawerForm extends Component {
+class DrawerForm extends React.Component {
   state = { visible: false };
 
   showDrawer = () => {
@@ -20,21 +20,21 @@ class DrawerForm extends Component {
   };
 
   render() {
-    // const { getFieldDecorator } = this.props.form;
+   
     return (
       <div>
         <Button type="primary" onClick={this.showDrawer}>
-          <Icon type="plus" /> New account
+          <Icon type="plus" /> {variableMap.menuDonate}
         </Button>
         <Drawer
-          title="Create a new account"
-          width={600}
+          title="基本信息填写"
+          width={720}
           onClose={this.onClose}
           visible={this.state.visible}
           bodyStyle={{ paddingBottom: 80 }}
         >
           <DonateForm />
-          {/* <div
+          <div
             style={{
               position: 'absolute',
               right: 0,
@@ -52,11 +52,14 @@ class DrawerForm extends Component {
             <Button onClick={this.onClose} type="primary">
               Submit
             </Button>
-          </div> */}
+          </div>
         </Drawer>
       </div>
     );
   }
 }
 
-export default DrawerForm;
+const FormDrawer = Form.create()(DrawerForm);
+
+export default FormDrawer;
+
