@@ -10,6 +10,7 @@
 .ant-layout-header {
   background-color: #C1CDCD;
   box-shadow: 0 2px 8px #f0f1f2;
+  padding-top: 8px;
 }
 .main-wrapper {
   display: flex;
