@@ -8,52 +8,62 @@ const hospitalItem = [
   {
     titleHospital: '市金银潭医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:1
   },
   {
     titleHospital: '武汉市肺科医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:2
   },
   {
     titleHospital: '武汉市汉口医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:3
   },
   {
     titleHospital: '武汉市武昌医院（西区）',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:4
   },
   { 
     titleHospital: '湖北省中西医结合医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:5
   },
   {
     titleHospital: '蔡甸区妇幼保健院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:6
   },
   {
     titleHospital: '江夏区中医医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:7
   },
   {
     titleHospital: '武汉市第四医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:8
   },
   {
     titleHospital: '协和西院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:9
   },
   { 
     titleHospital: '湖北六七二中西医结合骨科医院',
     needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX'
+    address: '具体地址：湖北省武汉市XX',
+    id:10
   },
 ]
 
@@ -73,7 +83,7 @@ export default () => {
         //console.log(item)
         if( index === numIndex || index === numIndex + 1 || index === numIndex + 2 ){
           return (
-            <Col span={8}>
+            <Col span={8} key={item.id}>
               <Card
                 headStyle={{fontSize:17, fontFamily:"Times New Roman"}}
                 title={item.titleHospital}
