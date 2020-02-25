@@ -10,8 +10,8 @@ import 'css/normalize.css';
 import 'css/main.css';
 
 export const T1 = () => <div style={{ width: '100%', height: '100%', background: '#dddddd' }}>组件区域1</div>
-export const T2 = () => <div style={{ width: '100%', height: '100%', background: '#d1d1d1' }}>组件区域2</div>
-export const T3 = () => <div style={{ width: '100%', height: '100%', background: '#d1d1d1' }}>组件区域3</div>
+export const T2 = () => <div style={{ width: '100%', height: '100%', background: '#g5g5g5' }}>组件区域2</div>
+export const T3 = () => <div style={{ width: '100%', height: '100%', background: '#e1e1e1' }}>组件区域3</div>
 
 const { Header } = Layout;
 
