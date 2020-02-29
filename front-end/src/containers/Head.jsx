@@ -2,7 +2,7 @@ import React,{ Fragment, useState} from 'react';
 import { variableMap } from 'global/variable'
 import { Menu, Icon } from 'antd';
 import { Link} from 'react-router-dom';
-import Search from '../components/search/Search';
+import SearchBox from '../components/search/Search';
 import DonateFormDrawer from '../components/formdrawer/DonateFormDrawer';
 import NeedFormDrawer from '../components/formdrawer/NeedFormDrawer';
 
@@ -54,7 +54,7 @@ export default () => {
       </div>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><DonateFormDrawer /></div>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><NeedFormDrawer /></div>
-      <div style={{float:'right',marginRight:'20px'}}><Search /></div>
+      <div style={{float:'right',marginRight:'20px'}}><SearchBox /></div>
     </Fragment>
   );
 }
