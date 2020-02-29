@@ -8,3 +8,7 @@ export const variableMap = {
   test: '测试',
   
 };
+
+export const options = [
+  'Burns Bay Road', 'Downing Street', 'Wall Street'
+];
