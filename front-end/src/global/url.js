@@ -12,4 +12,7 @@ export const urlMap = {
 export async function requestHospital() {
     const res = await Axios.get(urlMap.hospital);
     return res.data.queryResult.list;
+    // const res = await Axios.get('/api/hospital');
+    // return res.data.queryResult.list;
 } 
+
