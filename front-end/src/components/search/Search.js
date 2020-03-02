@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {CountContext} from 'containers/Head';
 import { AutoComplete, Icon, Button } from 'antd';
 import { variableMap } from 'global/variable';
-import { requestHospital } from 'global/url';
+
 
 const SearchBox = () =>{
   const {pot,setPot} = useContext(CountContext);
