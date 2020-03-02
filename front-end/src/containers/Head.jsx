@@ -1,4 +1,4 @@
-import React,{ Fragment, useState} from 'react';
+import React,{ Fragment, useState, createContext} from 'react';
 import { variableMap } from 'global/variable'
 import { Menu, Icon } from 'antd';
 import { Link} from 'react-router-dom';
@@ -34,9 +34,11 @@ const menuItem = [
   }
 ];
 
+export const CountContext = createContext();
 
-export default () => {
+export const Head = () => {
   const [current, setCurrent] = useState('首页')
+  const [pot,setPot] = useState("isnotSearch");
   return (
     <Fragment>
       <div style={{float:'left',height:'48px',lineHeight:'48px'}}>{variableMap.header}</div>
@@ -54,7 +56,11 @@ export default () => {
       </div>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><DonateFormDrawer /></div>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><NeedFormDrawer /></div>
-      <div style={{float:'right',marginRight:'20px'}}><SearchBox /></div>
+      <div style={{float:'right',marginRight:'20px'}}>
+        <CountContext.Provider value={{pot,setPot}}>  
+          <SearchBox />
+        </CountContext.Provider>
+      </div>
     </Fragment>
   );
 }
