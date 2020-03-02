@@ -13,7 +13,7 @@ export const addHospital = scene => {
     for (let i = 0; i < data.length; i++){
       const popup = new Popup({
       })
-        .setText(data[i].hospitalName);
+        .setHTML(`地址: ${data[i].address}<br/>医院名称: ${data[i].hospitalName}<br/>联系电话: ${data[i].phoneNumber}` );
       const el = document.createElement('hospital');
       el.className = 'hospitallabel';
       el.style.background = colors[i%5];

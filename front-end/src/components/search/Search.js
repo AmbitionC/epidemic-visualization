@@ -1,37 +1,36 @@
-import React, { useEffect,useState, cloneElement, useContext, useReducer,useImperativeHandle } from 'react';
-import { Input } from 'antd';
-import { render } from '@testing-library/react';
-import {CountContext} from 'containers/App';
-import { AutoComplete } from 'antd';
-import {options} from 'global/variable';
+import React, { useContext } from 'react';
+import {CountContext} from 'containers/Head';
+import { AutoComplete, Icon, Button } from 'antd';
+import { variableMap } from 'global/variable';
+import { requestHospital } from 'global/url';
 
 const SearchBox = () =>{
-
-  // const { Search } = Input;
-
-  const [val, setVal] = useState("123");
-  const {count,setCount} = useContext(CountContext);
-
+  const {pot,setPot} = useContext(CountContext);
+  
+  
   return(
-    <div style={{height:'48px'}}>
-      {/* <Search
-        placeholder="input search text"
-        onSearch={value => setCount(value)}
-        style={{ width:'200px'}}
-      >
-      </Search> */}
+    <div className="global-search-wrapper" style={{height:'48px',width:'200px',paddingTop:'8px',position:"relative"}}>
       <AutoComplete
-        style={{ width: 200 }}
-        dataSource={options}
-        // onSearch={()=>console.log("aaa")}
+        className="global-search"
+        style={{ width: '100%',position:"absolute" }}
+        dataSource={variableMap.hospitalName}
         onSelect={(value,option)=>{
-          setCount(value)
+          setPot(value)
         }}
-        placeholder="try to type `b`"
-        filterOption={(inputValue, option) =>
+        placeholder="请输入地点"
+        defaultOpen={false}
+        filterOption={(inputValue, option) => 
           option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
         }
       />
+      <Button
+        className="search-btn"
+        style={{ position:"absolute",marginLeft:'200px'}}
+        type="primary"
+        onClick={() => {console.log(pot)}}
+      >
+        <Icon type="search" />
+      </Button>
     </div>
     // <div>{val}</div>
   );
