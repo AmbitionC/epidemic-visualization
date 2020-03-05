@@ -16,3 +16,8 @@ export async function requestHospital() {
     // return res.data.queryResult.list;
 } 
 
+export async function requestCity() {
+  const res = await Axios.get('https://lab.isaaclin.cn'+'/nCoV/api/area?latest=1&province=湖北省');
+  return res.data.results[0].cities[0];
+}
+
