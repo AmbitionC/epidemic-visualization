@@ -1,31 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Statistic, Card, Row, Col, Icon } from 'antd';
-import { requestCity } from 'global/url';
+import { StatisticDataContext } from './statistic_data';
 
 export default () => {
-  const [confirmedCount,setConfirmedCount]=useState(0);
-  const [curedCount,setCuredCount]=useState(0);
-  const [currentConfirmedCount,setCurrentConfirmedCount]=useState(0);
-  const [deadCount,setDeadCount]=useState(0);
-  const [supectedCount,setSupectedCount]=useState(0);
-  let pastConfirmedCount,pastCuredCount,pastCurrentConfirmedCount,pastDeadCount,pastSupectedCount =0;
-  requestCity()
-  // .then(res => res.json())
-  .then(data => {
-    // console.log(data);
-    if(confirmedCount === 0){
-      setConfirmedCount(data.confirmedCount);
-      setCuredCount(data.curedCount);
-      setCurrentConfirmedCount(data.currentConfirmedCount);
-      setDeadCount(data.deadCount);
-      setSupectedCount(data.supectedCount);
-      pastCurrentConfirmedCount = "0";
-    }
-    else{
-      pastCurrentConfirmedCount = currentConfirmedCount;
-    }
-    
-  })
+  const { data } = useContext(StatisticDataContext); 
+  let pastCurrentConfirmedCount = 0;
+
   return(
     <div style={{ background: '#ECECEC', padding: '30px', fontSize:12}}>
       <Row gutter={[18,24]}>
@@ -33,7 +13,7 @@ export default () => {
           <Card>
             <Statistic
               title="现有确诊"
-              value={currentConfirmedCount}
+              value={data.currentConfirmedCount}
               precision={0}
               valueStyle={{ color: '#3f8600' }}
               prefix={<Icon type="arrow-up" />}
@@ -45,7 +25,7 @@ export default () => {
           <Card>
             <Statistic
               title="现有疑似"
-              value={supectedCount}
+              value={data.suspectedCount}
               precision={0}
               valueStyle={{ color: '#cf1322' }}
               prefix={<Icon type="arrow-down" />}
@@ -71,7 +51,7 @@ export default () => {
           <Card>
             <Statistic
               title="累计确诊"
-              value={confirmedCount}
+              value={data.confirmedCount}
               precision={0}
               valueStyle={{ color: '#3f8600' }}
               prefix={<Icon type="arrow-up" />}
@@ -82,7 +62,7 @@ export default () => {
           <Card>
             <Statistic
               title="累计治愈"
-              value={curedCount}
+              value={data.curedCount}
               precision={0}
               valueStyle={{ color: '#cf1322' }}
               prefix={<Icon type="arrow-down" />}
@@ -93,7 +73,7 @@ export default () => {
           <Card>
             <Statistic
               title="累计死亡"
-              value={deadCount}
+              value={data.deadCount}
               precision={0}
               valueStyle={{ color: '#cf1322' }}
               prefix={<Icon type="arrow-down" />}
