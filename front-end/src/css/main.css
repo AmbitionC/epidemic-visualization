@@ -33,3 +33,6 @@
 #map .amap-logo>img{
   display: none;
 }
+.ant-card-body{
+  height: 132px;
+}
