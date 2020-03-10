@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Statistic, Card, Row, Col, Icon } from 'antd';
-import { StatisticDataContext } from './statistic_data';
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import { Statistic, Card, Row, Col } from 'antd';
+import { StatisticDataContext } from '../../store/reducer';
 import { getNowFormatDate } from '../../global/url';
 
 export default () => {
@@ -9,7 +10,7 @@ export default () => {
   let yesterdayCurrentConfirmed = 0;
   let yesterdaysupected = 0;
 
-  return(
+  return (
     <div style={{ background: '#ECECEC', padding: '30px', fontSize:12}}>
       <Row gutter={[18,24]}>
         <Col span={8}>
@@ -29,7 +30,7 @@ export default () => {
               value={data.currentConfirmedCount}
               precision={0}
               valueStyle={{ color: '#3f8600' }}
-              prefix={<Icon type="arrow-up" />}
+              prefix={<ArrowUpOutlined />}
             />
             <h5>昨日{yesterdayCurrentConfirmed}</h5>
           </Card>
@@ -41,7 +42,7 @@ export default () => {
               value={data.suspectedCount}
               precision={0}
               valueStyle={{ color: '#cf1322' }}
-              prefix={<Icon type="arrow-down" />}
+              prefix={<ArrowDownOutlined />}
             />
             <h5>昨日{yesterdaysupected}</h5>
           </Card>
@@ -55,7 +56,7 @@ export default () => {
               value={data.confirmedCount}
               precision={0}
               valueStyle={{ color: '#3f8600' }}
-              prefix={<Icon type="arrow-up" />}
+              prefix={<ArrowUpOutlined />}
             />
           </Card>
         </Col>
@@ -66,7 +67,7 @@ export default () => {
               value={data.curedCount}
               precision={0}
               valueStyle={{ color: '#cf1322' }}
-              prefix={<Icon type="arrow-down" />}
+              prefix={<ArrowDownOutlined />}
             />
           </Card>
         </Col>
@@ -77,11 +78,11 @@ export default () => {
               value={data.deadCount}
               precision={0}
               valueStyle={{ color: '#cf1322' }}
-              prefix={<Icon type="arrow-down" />}
+              prefix={<ArrowDownOutlined />}
             />
           </Card>
         </Col>
       </Row>
     </div>
-  )
+  );
 }

@@ -1,5 +1,8 @@
 import React from 'react';
-import { Drawer, Form, Button, Icon } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Drawer, Button } from 'antd';
 import DonateForm from '../form/DonateForm';
 import { variableMap } from 'global/variable'
 
@@ -24,7 +27,7 @@ class DrawerForm extends React.Component {
     return (
       <div>
         <Button type="primary" onClick={this.showDrawer}>
-          <Icon type="plus" /> {variableMap.menuDonate}
+          <PlusOutlined /> {variableMap.menuDonate}
         </Button>
         <Drawer
           title="基本信息填写"

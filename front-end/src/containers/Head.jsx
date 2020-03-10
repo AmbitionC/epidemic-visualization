@@ -1,35 +1,37 @@
 import React,{ Fragment, useState, createContext} from 'react';
 import { variableMap } from 'global/variable'
-import { Menu, Icon } from 'antd';
+import { BookOutlined, AimOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
 import { Link} from 'react-router-dom';
 import SearchBox from '../components/search/Search';
 import DonateFormDrawer from '../components/formdrawer/DonateFormDrawer';
 import NeedFormDrawer from '../components/formdrawer/NeedFormDrawer';
 import StatisticDrawer from '../components/statistic/StatisticDrawer';
-import { StatisticData } from '../components/statistic/statistic_data';
+import { StatisticData } from '../store/reducer';
+import { FormData } from '../store/reducer';
 
 const menuItem = [
   {
-    icon: 'book',
+    icon: BookOutlined,
     key: '首页',
     name: variableMap.homePage,
     routeurl: '/'
   },
   {
-    icon: 'link',
+    icon: AimOutlined,
     key: 'test1',
     name: variableMap.test,
     routeurl: '/platform/test1/'
     
   },
   {
-    icon: 'link',
+    icon: AimOutlined,
     key: 'test2',
     name: variableMap.test,
     routeurl: '/platform/test2/'
   },
   {
-    icon: 'link',
+    icon: AimOutlined,
     key: 'test3',
     name: variableMap.test,
     routeurl: '/platform/test3/'
@@ -50,14 +52,16 @@ export const Head = () => {
             //console.log(item)
             return (
               <Menu.Item key={item.key}>
-                <Link to={item.routeurl}><Icon type={item.icon} />{item.name}</Link>
+                <Link to={item.routeurl}><item.icon />{item.name}</Link>
               </Menu.Item>
             );
           })}
         </Menu>
       </div>
+      <FormData>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><DonateFormDrawer /></div>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><NeedFormDrawer /></div>
+      </FormData>
       <div style={{float:'left',marginLeft:'20px',height:'48px',lineHeight:'48px'}}><StatisticData><StatisticDrawer /></StatisticData></div>
       <div style={{float:'right',marginRight:'20px'}}>
         <CountContext.Provider value={{pot,setPot}}>  

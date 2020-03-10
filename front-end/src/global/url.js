@@ -10,14 +10,14 @@ export const urlMap = {
 }
 
 export async function requestHospital() {
-    const res = await Axios.get(urlMap.hospital);
-    return res.data.queryResult.list;
-    // const res = await Axios.get('/api/hospital');
+    // const res = await Axios.get(urlMap.hospital);
     // return res.data.queryResult.list;
+    const res = await Axios.get('/api/hospital');
+    return res.data.queryResult.list;
 } 
 
 export async function requestCity() {
-  const res = await Axios.get('https://lab.isaaclin.cn' + '/nCoV/api/area?latest=1&province=湖北省');
+  const res = await Axios.get('https://lab.isaaclin.cn/nCoV/api/area?latest=1&province=湖北省');
   return res.data.results[0].cities[0];
 }
 

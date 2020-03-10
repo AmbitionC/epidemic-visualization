@@ -1,4 +1,5 @@
-import { Card, Icon, Col, Row } from 'antd';
+import { EllipsisOutlined, PhoneOutlined, SearchOutlined } from '@ant-design/icons';
+import { Card, Col, Row } from 'antd';
 import React, { useState } from "react";
 import 'antd/dist/antd.css';
 import { Pagination } from 'antd';
@@ -76,7 +77,7 @@ export default () => {
   const [pageSize, setPageSize] = useState(3);
   const numIndex = (currentPage - 1) * pageSize;
   const totalnumber = hospitalItem.length;
-  return(
+  return (
     <div style={{ background: '#ECECEC', padding: '30px' }}>
       <Row gutter={16}>
       {hospitalItem.map((item,index) => {
@@ -88,9 +89,9 @@ export default () => {
                 headStyle={{fontSize:17, fontFamily:"Times New Roman"}}
                 title={item.titleHospital}
                 actions={[
-                  <div>查看地图<Icon type="search" /></div>,
-                  <div>联系方式<Icon type="phone" /></div>,
-                  <div>更多信息<Icon type="ellipsis" /></div>,
+                  <div>查看地图<SearchOutlined /></div>,
+                  <div>联系方式<PhoneOutlined /></div>,
+                  <div>更多信息<EllipsisOutlined /></div>,
                 ]}
               >
                 <Meta

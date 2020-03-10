@@ -1,50 +1,61 @@
- import {
-  SUBMIT_DONATE_VALUE,
-   SUBMIT_NEED_VALUE
- } from './actionTypes'
+import React, { createContext, useReducer } from 'react';
 
-const defaultState = {
-  display_need: 'none',
-  display_donate: 'none',
-  DonateUsername: '',
-  DonatePhone: '',
-  DonateEmail: '',
-  donateItem: '',
-  donateNumber: '',
-  DonateHospital: '',
-  NeedUsername:'',
-  NeedPhone:'',
-  NeedEmail:'',
-  needItem:'',
-  needNumber:''
+export const StatisticDataContext = createContext({});
+
+export const GET_STATISTIC_DATA = "get_statistic_data";
+
+export const StatisticData = props => {
+
+  const [data, dispatch] = useReducer(reducer, {
+    cityName: '',
+    currentConfirmedCount: 0,
+    confirmedCount: 0,
+    suspectedCount: 0,
+    curedCount: 0,
+    deadCount: 0,
+    locationId: 0,
+    cityEnglishName: ''
+  })
+
+  return (
+    <StatisticDataContext.Provider value={{data, dispatch}}>
+      {props.children}
+    </StatisticDataContext.Provider>
+  )
 }
 
-export default (state = defaultState, action) => {
-  const newState = JSON.parse(JSON.stringify(state));
+export const FormDataContext = createContext({});
+
+export const GET_FORM_DATA = "get_form_data";
+
+export const FormData = props => {
+
+  const [data, dispatch] = useReducer(reducer, {
+    name: '',
+    prefix: '',
+    phone: '',
+    email: '',
+    donate_item: '',
+    donate_number: '',
+    need_item: '',
+    need_number: '',
+    hospital: ''
+  })
+
+  return (
+    <FormDataContext.Provider value={{data, dispatch}}>
+      {props.children}
+    </FormDataContext.Provider>
+  )
+}
+
+const reducer = (state, action) => {
   switch(action.type) {
-    case SUBMIT_DONATE_VALUE:
-    {
-      newState.DonateUsername = action.values.username;
-      newState.DonatePhone = action.values.phone;
-      newState.DonateEmail = action.values.email;
-      newState.donateItem = action.values.donateItem;
-      newState.donateNumber = action.values.donateNumber;
-      newState.DonateHospital = action.values.hospital;
-
-      return newState;
-    }
-    case SUBMIT_NEED_VALUE:
-    {
-      newState.NeedUsername = action.values.username;
-      newState.NeedPhone = action.values.phone;
-      newState.NeedEmail = action.values.email;
-      newState.needItem = action.values.needItem;
-      newState.needNumber = action.values.needNumber;
-
-      return newState;
-    }
+    case GET_STATISTIC_DATA:
+      return action.data;
+    case GET_FORM_DATA:
+      return action.data;
     default:
-      break;
+      return state;
   }
-  return state;
 }

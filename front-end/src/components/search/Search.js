@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import {CountContext} from 'containers/Head';
-import { AutoComplete, Icon, Button } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import { AutoComplete, Button } from 'antd';
 import { variableMap } from 'global/variable';
 
 
@@ -8,7 +9,8 @@ const SearchBox = () =>{
   const {pot,setPot} = useContext(CountContext);
   
   
-  return(
+  return (
+    // <div>{val}</div>
     <div className="global-search-wrapper" style={{height:'48px',width:'200px',paddingTop:'8px',position:"relative"}}>
       <AutoComplete
         className="global-search"
@@ -29,10 +31,9 @@ const SearchBox = () =>{
         type="primary"
         onClick={() => {console.log(pot)}}
       >
-        <Icon type="search" />
+        <SearchOutlined />
       </Button>
     </div>
-    // <div>{val}</div>
   );
 }
 export default SearchBox;

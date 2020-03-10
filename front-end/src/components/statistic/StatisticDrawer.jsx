@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Drawer, Button } from 'antd';
-import { StatisticDataContext, GET_STATISTIC_DATA } from './statistic_data';
+import { StatisticDataContext, GET_STATISTIC_DATA } from '../../store/reducer';
 import StatisticShow from '../statistic/StatisticShow';
 import { requestCity } from 'global/url';
 

@@ -1,5 +1,8 @@
 import React from 'react';
-import { Drawer, Form, Button, Icon } from 'antd';
+import { UsergroupAddOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Drawer, Button } from 'antd';
 import NeedForm from '../form/NeedForm';
 import { variableMap } from 'global/variable'
 
@@ -24,7 +27,7 @@ class DrawerForm extends React.Component {
     return (
       <div>
         <Button type="primary" onClick={this.showDrawer}>
-          <Icon type="usergroup-add" /> {variableMap.menuNeed}
+          <UsergroupAddOutlined /> {variableMap.menuNeed}
         </Button>
         <Drawer
           title="基本信息填写"
