@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Layout } from 'antd';
 import { Head } from './Head';
 import Map from 'components/map/Map';
 import CardShow from '../components/card/CardShow';
+import { DonateData } from '../store/reducer';
+
 
 import 'css/normalize.css';
 import 'css/main.css';
@@ -17,7 +19,6 @@ export const T3 = () => <div style={{ width: '100%', height: '100%', background:
 
 export const App = () => {
   const { Header } = Layout;
-  
 
   return (
     <Router>
@@ -38,7 +39,9 @@ export const App = () => {
                 <Map />
               </div>
               <div className="row" style={{ height: '33.33%' }}>
-                <CardShow />
+                <DonateData>
+                  <CardShow />
+                </DonateData>
               </div>
             </div>
           </Route>

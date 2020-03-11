@@ -49,11 +49,30 @@ export const FormData = props => {
   )
 }
 
+export const DonateDataContext = createContext({});
+
+export const GET_DONATE_DATA = "get_donate_data";
+
+export const DonateData = props => {
+
+  const [data, dispatch] = useReducer(reducer,[])
+
+  return (
+    <DonateDataContext.Provider value={{data, dispatch}}>
+      {props.children}
+    </DonateDataContext.Provider>
+  )
+}
+
+
+
 const reducer = (state, action) => {
   switch(action.type) {
     case GET_STATISTIC_DATA:
       return action.data;
     case GET_FORM_DATA:
+      return action.data;
+    case GET_DONATE_DATA:
       return action.data;
     default:
       return state;

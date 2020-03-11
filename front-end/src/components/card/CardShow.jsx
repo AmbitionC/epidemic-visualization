@@ -1,101 +1,52 @@
-import { EllipsisOutlined, PhoneOutlined, SearchOutlined } from '@ant-design/icons';
 import { Card, Col, Row } from 'antd';
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import 'antd/dist/antd.css';
 import { Pagination } from 'antd';
+import { ModalFirst } from './ModalFirst';
+import { ModalSecond } from './ModalSecond';
+import { ModalThird } from './ModalThird';
+import { requestDonate } from '../../global/url';
+import { DonateDataContext, GET_DONATE_DATA } from '../../store/reducer';
 
 const { Meta } = Card;
-const hospitalItem = [
-  {
-    titleHospital: '市金银潭医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:1
-  },
-  {
-    titleHospital: '武汉市肺科医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:2
-  },
-  {
-    titleHospital: '武汉市汉口医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:3
-  },
-  {
-    titleHospital: '武汉市武昌医院（西区）',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:4
-  },
-  { 
-    titleHospital: '湖北省中西医结合医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:5
-  },
-  {
-    titleHospital: '蔡甸区妇幼保健院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:6
-  },
-  {
-    titleHospital: '江夏区中医医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:7
-  },
-  {
-    titleHospital: '武汉市第四医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:8
-  },
-  {
-    titleHospital: '协和西院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:9
-  },
-  { 
-    titleHospital: '湖北六七二中西医结合骨科医院',
-    needItem: '需要大批口罩',
-    address: '具体地址：湖北省武汉市XX',
-    id:10
-  },
-]
-
 
 
 export default () => {
 
   const [currentPage, setCurrentPage] = useState(1);
+  const {data,dispatch} = useContext(DonateDataContext);
+
   //暂时用不到改变pageSize的地方
   const [pageSize, setPageSize] = useState(3);
   const numIndex = (currentPage - 1) * pageSize;
-  const totalnumber = hospitalItem.length;
+  const totalnumber = data.length;
+
+  useEffect(() => {
+    requestDonate().then(data => {
+      dispatch({type:GET_DONATE_DATA,data:data});
+    })
+   },[]);
+
+  
   return (
-    <div style={{ background: '#ECECEC', padding: '30px' }}>
+    <div style={{ background: '#ECECEC', padding: '10px' }}>
       <Row gutter={16}>
-      {hospitalItem.map((item,index) => {
+      {data.map((item,index) => {
         //console.log(item)
         if( index === numIndex || index === numIndex + 1 || index === numIndex + 2 ){
           return (
             <Col span={8} key={item.id}>
               <Card
                 headStyle={{fontSize:17, fontFamily:"Times New Roman"}}
-                title={item.titleHospital}
+                title={item.hospitalName}
                 actions={[
-                  <div>查看地图<SearchOutlined /></div>,
-                  <div>联系方式<PhoneOutlined /></div>,
-                  <div>更多信息<EllipsisOutlined /></div>,
+                  <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalFirst name={item.hospitalName}/></div>,
+                  <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalSecond phone={item.phoneNumber}/></div>,
+                  <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalThird need={item.needItem}/></div>
                 ]}
               >
                 <Meta
-                  title={item.needItem}
+                  title={item.needStatus}
                   description={item.address}
                 />
               </Card>
