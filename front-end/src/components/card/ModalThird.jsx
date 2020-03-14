@@ -9,10 +9,15 @@ export const ModalThird = ({need}) => {
         详细需求
       </Button>
       <Modal
-        title="Basic Modal"
+        title="详细需求"
         visible={visible}
         onOk={()=>{setVisible(false)}}
         onCancel={()=>{setVisible(false)}}
+        footer={[ 
+          <Button key="submit" type="primary" onClick={()=>{setVisible(false)}} >
+            OK
+          </Button>
+        ]}
       >
         <p>{need}</p>
       </Modal>
