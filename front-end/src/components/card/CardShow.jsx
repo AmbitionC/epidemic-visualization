@@ -5,8 +5,8 @@ import { Pagination } from 'antd';
 import { ModalFirst } from './ModalFirst';
 import { ModalSecond } from './ModalSecond';
 import { ModalThird } from './ModalThird';
-import { requestDonate } from '../../global/url';
-import { DonateDataContext, GET_DONATE_DATA } from '../../store/reducer';
+import { requestNeed } from '../../global/url';
+import { NeedDataContext, GET_NEED_DATA } from '../../store/reducer';
 
 const { Meta } = Card;
 
@@ -14,7 +14,7 @@ const { Meta } = Card;
 export default () => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const {data,dispatch} = useContext(DonateDataContext);
+  const {data,dispatch} = useContext(NeedDataContext);
 
   //暂时用不到改变pageSize的地方
   const [pageSize, setPageSize] = useState(3);
@@ -22,8 +22,8 @@ export default () => {
   const totalnumber = data.length;
 
   useEffect(() => {
-    requestDonate().then(data => {
-      dispatch({type:GET_DONATE_DATA,data:data});
+    requestNeed().then(data => {
+      dispatch({type:GET_NEED_DATA,data:data});
     })
    },[]);
 
@@ -40,7 +40,7 @@ export default () => {
                 headStyle={{fontSize:17, fontFamily:"Times New Roman"}}
                 title={item.hospitalName}
                 actions={[
-                  <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalFirst name={item.hospitalName}/></div>,
+                  <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalFirst /></div>,
                   <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalSecond phone={item.phoneNumber}/></div>,
                   <div style={{width:'96px',float:'left',marginLeft:'2px'}}><ModalThird need={item.needItem}/></div>
                 ]}

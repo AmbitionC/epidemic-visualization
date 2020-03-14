@@ -26,9 +26,9 @@ const menuItem = [
   },
   {
     icon: AimOutlined,
-    key: 'test2',
-    name: variableMap.test,
-    routeurl: '/platform/test2/'
+    key: 'donate',
+    name: variableMap.donate,
+    routeurl: '/platform/donate/'
   },
   {
     icon: AimOutlined,

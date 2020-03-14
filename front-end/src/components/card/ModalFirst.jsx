@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
 
-export const ModalFirst = ({name}) => {
+export const ModalFirst = ({}) => {
   const [visible, setVisible] = useState(false);
   return (
     <div>
@@ -14,7 +14,7 @@ export const ModalFirst = ({name}) => {
         onOk={()=>{setVisible(false)}}
         onCancel={()=>{setVisible(false)}}
       >
-        <p>{name}</p>
+        <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Modal>

@@ -15,10 +15,14 @@ export async function requestHospital() {
     const res = await Axios.get('/api/hospital');
     return res.data.queryResult.list;
 }
-export async function requestDonate() {
-  const res = await Axios.get('/api/donate');
+export async function requestNeed() {
+  const res = await Axios.get('/api/need');
   return res.data.queryResult.list;
 }  
+export async function requestDonate() {
+  const res = await Axios.get('/api/donate_content');
+  return res.data.queryResult.list;
+}
 
 export async function requestCity() {
   const res = await Axios.get('https://lab.isaaclin.cn/nCoV/api/area?latest=1&province=湖北省');

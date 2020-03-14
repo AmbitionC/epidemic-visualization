@@ -36,3 +36,6 @@
 .ant-card-body{
   height: 110px;
 }
+.ant-pagination.mini{
+  margin-bottom: 0px;
+}

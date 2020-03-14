@@ -49,6 +49,21 @@ export const FormData = props => {
   )
 }
 
+export const NeedDataContext = createContext({});
+
+export const GET_NEED_DATA = "get_need_data";
+
+export const NeedData = props => {
+
+  const [data, dispatch] = useReducer(reducer,[])
+
+  return (
+    <NeedDataContext.Provider value={{data, dispatch}}>
+      {props.children}
+    </NeedDataContext.Provider>
+  )
+}
+
 export const DonateDataContext = createContext({});
 
 export const GET_DONATE_DATA = "get_donate_data";
@@ -71,6 +86,8 @@ const reducer = (state, action) => {
     case GET_STATISTIC_DATA:
       return action.data;
     case GET_FORM_DATA:
+      return action.data;
+    case GET_NEED_DATA:
       return action.data;
     case GET_DONATE_DATA:
       return action.data;
